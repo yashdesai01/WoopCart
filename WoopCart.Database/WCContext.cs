@@ -8,7 +8,7 @@ using WoopCart.Entities;
 
 namespace WoopCart.Database
 {
-    public class WCContext : DbContext  
+    public class WCContext : DbContext, IDisposable
     {
         public WCContext() : base("WoopCartConnection")
         {
