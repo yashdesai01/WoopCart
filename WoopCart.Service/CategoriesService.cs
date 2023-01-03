@@ -42,12 +42,13 @@ namespace WoopCart.Service
             }
         }
 
-        public void DeleteCategory(Category category)
+        public void DeleteCategory(int ID)
         {
             using (var context = new WCContext())
             {
-                context.Entry(category).State = System.Data.Entity.EntityState.Deleted;
-                //context.Category.Remove(category);
+                var category = context.Category.Find(ID);
+                //context.Entry(category).State = System.Data.Entity.EntityState.Deleted;
+                context.Category.Remove(category);
                 context.SaveChanges();
             }
         }

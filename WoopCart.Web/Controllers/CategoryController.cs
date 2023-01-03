@@ -53,7 +53,7 @@ namespace WoopCart.Web.Controllers
         public ActionResult Delete(Category category)
         {
             category = categoriesService.GetCategory(category.ID);
-            categoriesService.DeleteCategory(category);
+            categoriesService.DeleteCategory(category.ID);
             return RedirectToAction("Index");
         }
     }
